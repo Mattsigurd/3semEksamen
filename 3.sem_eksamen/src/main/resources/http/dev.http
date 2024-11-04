@@ -1,0 +1,56 @@
+### Get all trips
+GET {{URL}}/trips
+Content-Type: application/json
+
+### Get a trip by its id
+GET {{URL}}/trips/1
+Content-Type: application/json
+
+### Create a new trip
+POST {{URL}}/trips
+Content-Type: application/json
+
+{
+  "name": "Mountain Hike",
+  "startTime": "08:00:00",
+  "endTime": "18:00:00",
+  "longitude": 45.1234,
+  "latitude": -123.4567,
+  "price": 150.0,
+  "category": "FOREST",
+  "guide": {
+    "id": 1
+  }
+}
+
+### Update information about a trip
+PUT {{URL}}/trips/1
+Content-Type: application/json
+
+{
+  "name": "Updated Mountain Hike",
+  "startTime": "08:00:00",
+  "endTime": "18:00:00",
+  "longitude": 45.1234,
+  "latitude": -123.4567,
+  "price": 150.0,
+  "category": "FOREST",
+  "guide": {
+    "id": 1
+  }
+}
+
+### Delete a trip
+DELETE {{URL}}/trips/1
+Content-Type: application/json
+
+### Add an existing guide to an existing trip
+PUT {{URL}}/trips/1/guides/1
+Content-Type: application/json
+
+### Populate the database with trips and guides
+POST {{URL}}/trips/populate
+Content-Type: application/json
+### Get trips by category
+GET {{URL}}/trips/category/FOREST
+Content-Type: application/json
